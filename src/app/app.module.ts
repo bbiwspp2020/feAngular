@@ -12,14 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './layout/top-bar/top-bar.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { AntDesignModule } from './ant-design.module'
+import { AntDesignModule } from './ant-design.module';
+import { LoginComponent } from './pages/login/login.component'
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
