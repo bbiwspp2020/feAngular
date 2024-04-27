@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopBarComponent } from './layout/top-bar/top-bar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AntDesignModule } from './ant-design.module';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component'
 registerLocaleData(en);
 
 @NgModule({
@@ -21,7 +22,8 @@ registerLocaleData(en);
     AppComponent,
     TopBarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
