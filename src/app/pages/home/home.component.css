@@ -1,0 +1,36 @@
+[nz-carousel-content] {
+    text-align: center;
+    height: 350px;
+    line-height: 350px;
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
+}
+[nzAutoPlay]{
+    height: 400px;
+}
+
+[nz-card-item]{
+    border: 1px solid #0000003e;
+    text-align: center;
+    padding: 1em;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+[nz-card-item]:hover{
+    border: 1px solid #ff4d4f;
+    cursor: pointer;
+}
+
+h3 {
+    color: #fff;
+}
+
+.header{
+    border-left: 15px solid #ff4d4f;
+    border-radius: 4px;
+    color: #ff4d4f;
+}

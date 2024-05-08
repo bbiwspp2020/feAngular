@@ -13,7 +13,12 @@
                     <p>Get 10% off your first order</p>
                 </div>
                 <div class="col-12">
-                   <input type="text">
+                    <nz-input-group [nzSuffix]="suffixIconSearch">
+                        <input type="text" nz-input placeholder="Enter your email" />
+                    </nz-input-group>
+                    <ng-template #suffixIconSearch>
+                        <span nz-icon nzType="send" nzTheme="outline"></span>
+                    </ng-template>
                 </div>
             </div>
         </div>
@@ -24,7 +29,7 @@
                     <h4>Support</h4>
                 </div>
                 <div class="col-12">
-                    <p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
+                    <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
                 </div>
                 <div class="col-12">
                     <p>exclusive@gmail.com</p>
@@ -92,7 +97,7 @@
                     <img src="../../../assets/images/footer/download-appstore.png" alt="download-appstore">
                 </div>
                 <div class="col-12">
-                    
+
                 </div>
                 <div class="col-6 d-flex justify-content-between mt-4">
                     <img src="../../../assets/images/footer/Icon-Facebook.png" alt="Icon-Facebook">
@@ -103,5 +108,11 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <span nz-icon nzType="copyright" nzTheme="outline"></span> Copyright Rimel 2022. All right reserved
+        </div>
     </div>
 </footer>

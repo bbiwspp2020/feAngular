@@ -15,6 +15,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { AntDesignModule } from './ant-design.module';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component'
+import { HomeComponent } from './pages/home/home.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -23,7 +24,8 @@ registerLocaleData(en);
     TopBarComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

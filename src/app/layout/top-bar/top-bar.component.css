@@ -1,14 +1,32 @@
-nav{
+.nav {
     display: flex;
-    align-items:center;
-    justify-content:space-evenly;
+    align-items: center;
+    justify-content: space-evenly;
     min-height: 48px;
     background-color: black;
     color: white;
 }
 
-button{
+.Exclusive {
+    min-height: 68px;
+    border-bottom: 2px solid rgb(201, 201, 201);
+    overflow: hidden;
+}
+
+.leg {
     background-color: black;
     color: white;
     border: none;
+}
+
+.icon {
+    font-size: 25px;
+}
+
+.user {
+    border: none;
+}
+
+.icon-dropdown {
+    font-size: 17px;
 }

@@ -1,0 +1,289 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 p-0">
+      <ul nz-menu [nzMode]="'inline'">
+        <li nz-submenu nzTitle="Woman’s Fashion">
+          <ul>
+            <li nz-menu-item>Option 1</li>
+            <li nz-menu-item>Option 2</li>
+          </ul>
+        </li>
+        <li nz-submenu (nzOpenChange)="change($event)" nzTitle="Men’s Fashion">
+          <ul>
+            <li nz-menu-item>Option 5</li>
+            <li nz-menu-item>Option 6</li>
+            <li nz-submenu nzTitle="Submenu">
+              <ul>
+                <li nz-menu-item>Option 7</li>
+                <li nz-menu-item>Option 8</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-item nzTitle="Navigation Three" nzIcon="setting">
+          Electronics
+        </li>
+        <li nz-menu-item nzTitle="Navigation Three" nzIcon="setting">
+          Home & Lifestyle
+        </li>
+        <li nz-menu-item nzTitle="Navigation Three" nzIcon="setting">
+          Sports & Outdoor
+        </li>
+        <li nz-menu-item nzTitle="Navigation Three" nzIcon="setting">
+          Baby’s & Toys
+        </li>
+        <li nz-menu-item nzTitle="Navigation Three" nzIcon="setting">
+          Groceries & Pets
+        </li>
+        <li nz-menu-item nzTitle="Navigation Three" nzIcon="setting">
+          Health & Beauty
+        </li>
+      </ul>
+    </div>
+    <div class="col-9 p-0">
+      <nz-carousel nzAutoPlay>
+        <ng-container *ngFor="let i of array">
+          <div nz-carousel-content>
+            <h3>{{ i }}</h3>
+          </div>
+        </ng-container>
+      </nz-carousel>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!-- Flash Sales -->
+  <div class="row">
+    <div class="col-12">
+      <p class="header"> &nbsp;Today's</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <h1>
+        Flash Sales
+      </h1>
+    </div>
+    <div class="col-3">
+      <nz-countdown [nzValue]="deadline" [nzFormat]="'DD  :  HH  :  mm  :  ss'"
+        [nzTitle]="'Days  :  Hours  :  Minutes  :  Seconds'"></nz-countdown>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4 mt-4" *ngFor="let i of flash;index of index">
+      <nz-card nzHoverable style="width:250px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting]">
+        <nz-card-meta nzTitle="{{i.title}}" nzDescription="{{'$' + i.pricr}}{{'$' + i.oriPrice}}"
+          [nzAvatar]="avatarTemplate">
+        </nz-card-meta>
+        <nz-rate [ngModel]="i.rate" nzAllowHalf></nz-rate> ({{i.form}})
+      </nz-card>
+      <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="{{i.image}}"></nz-avatar>
+      </ng-template>
+      <ng-template #coverTemplate>
+        <img alt="example" src="{{i.image}}" />
+      </ng-template>
+      <ng-template #actionSetting>
+        <button nz-button nzType="primary" (click)="showModalMiddle()">Vertically centered modal dialog</button>
+      </ng-template>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <button nz-button nzType="primary" nzDanger>View All Products</button>
+    </div>
+  </div>
+  <hr>
+  <br>
+  <br>
+  <!--End Flash Sales -->
+
+  <!-- Categories -->
+  <div class="row">
+    <div class="col-12 ">
+      <p class="header"> &nbsp;Categories</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>
+        Browse By Category
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let data of data">
+      <div class="col-md-2 mb-4 mt-4">
+        <nz-card nzHoverable nz-card-item [nzCover]="coverTemplates">
+          <nz-card-meta nzTitle="{{data.name}}"></nz-card-meta>
+        </nz-card>
+        <ng-template #coverTemplates>
+          <img src="{{data.image}}" style="width: 50px;" alt="">
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <div class="col-12  text-center">
+      <button nz-button nzType="primary" nzDanger>View All Products</button>
+    </div>
+  </div>
+  <hr>
+  <br>
+  <br>
+  <!--End Categories -->
+
+  <!-- This Month -->
+  <div class="row">
+    <div class="col-12 ">
+      <p class="header"> &nbsp;This Month</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>
+        Best Selling Products
+      </h1>
+    </div>
+    <div class="col  text-end">
+      <button nz-button nzType="primary" nzDanger>View All Products</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4 mt-4">
+      <nz-card nzHoverable style="width:300px;" [nzCover]="coverTemplate"
+        [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+        <nz-card-meta nzTitle="Card title" nzDescription="This is the description"
+          [nzAvatar]="avatarTemplate"></nz-card-meta>
+      </nz-card>
+      <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+      </ng-template>
+      <ng-template #coverTemplate>
+        <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+      </ng-template>
+      <ng-template #actionSetting>
+        <span nz-icon nzType="setting"></span>
+      </ng-template>
+      <ng-template #actionEdit>
+        <span nz-icon nzType="edit"></span>
+      </ng-template>
+      <ng-template #actionEllipsis>
+        <span nz-icon nzType="ellipsis"></span>
+      </ng-template>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--End This Month -->
+  <div class="row">
+    <div class="col-12">
+      <img src="../../../assets/images/Frame600.png" style="width: 100%;object-fit: cover;" alt="">
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col">
+      <p class="header"> &nbsp;Our Products</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>
+        Explore Our Products
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-4 mt-4">
+      <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+        <nz-card-meta nzTitle="Card title" nzDescription="This is the description"
+          [nzAvatar]="avatarTemplate"></nz-card-meta>
+      </nz-card>
+      <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+      </ng-template>
+      <ng-template #coverTemplate>
+        <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+      </ng-template>
+      <ng-template #actionSetting>
+        <span nz-icon nzType="setting"></span>
+      </ng-template>
+      <ng-template #actionEdit>
+        <span nz-icon nzType="edit"></span>
+      </ng-template>
+      <ng-template #actionEllipsis>
+        <span nz-icon nzType="ellipsis"></span>
+      </ng-template>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12  text-center">
+      <button nz-button nzType="primary" nzDanger>View All Products</button>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col">
+      <p class="header"> &nbsp;Featured</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>
+        New Arrival
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <img src="../../../assets/images/New Arrival/Frame684.png" alt="">
+    </div>
+    <div class="col-6 d-flex flex-column justify-content-between">
+      <div class="col-12">
+        <img src="../../../assets/images/New Arrival/Frame685.png" style="width: 100%;" alt="">
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <img src="../../../assets/images/New Arrival/Frame686.png" alt="">
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <img src="../../../assets/images/New Arrival/Frame687.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col d-flex justify-content-center align-items-center flex-column">
+      <img src="../../../assets/images/Services.png">
+      <br>
+      <b>FREE AND FAST DELIVERY</b>
+      <p>Free delivery for all orders over $140</p>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center flex-column">
+      <img src="../../../assets/images/Services24-7.png">
+      <br>
+      <b>24/7 CUSTOMER SERVICE</b>
+      <p>Friendly 24/7 customer support</p>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center flex-column">
+      <img src="../../../assets/images/Servicesback.png">
+      <br>
+      <b>MONEY BACK GUARANTEE</b>
+      <p>We reurn money within 30 days</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>

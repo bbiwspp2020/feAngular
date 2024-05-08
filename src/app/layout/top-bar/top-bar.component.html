@@ -1,14 +1,84 @@
-<nav>
-    <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-        ShopNow
-        English</span>
-        <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight">English 
-            <span nz-icon nzType="down" nzTheme="outline"></span>
-        </button>
-        <nz-dropdown-menu #menu="nzDropdownMenu">
-          <ul nz-menu>
-            <li nz-menu-item>English</li>
-            <li nz-menu-item>ไทย</li>
-          </ul>
-        </nz-dropdown-menu>
+<nav class="nav">
+  <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+    ShopNow
+    English</span>
+  <button class="leg" nz-button nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight">English
+    <span nz-icon nzType="down" nzTheme="outline"></span>
+  </button>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item>English</li>
+      <li nz-menu-item>ไทย</li>
+    </ul>
+  </nz-dropdown-menu>
+</nav>
+
+<nav class="Exclusive">
+  <div class="row">
+    <div class="col d-flex align-items-center">
+      <h1>
+        <b>Exclusive</b>
+      </h1>
+    </div>
+    <div class="col d-flex align-items-center">
+      <ul nz-menu nzMode="horizontal">
+        <li nz-menu-item routerLink="/home">
+          Home
+        </li>
+        <li nz-menu-item>
+          Contact
+        </li>
+        <li nz-menu-item>
+          About
+        </li>
+        <li nz-menu-item routerLink="/register">
+          Sign Up
+        </li>
+      </ul>
+    </div>
+    <div class="col-2 d-flex align-items-center">
+      <nz-input-group [nzSuffix]="suffixIconSearch">
+        <input type="text" nz-input placeholder="What are you looking for?" />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <span nz-icon nzType="search"></span>
+      </ng-template>
+    </div>
+    <div class="col-2 d-flex align-items-center  justify-content-around">
+      <nz-badge [nzCount]="200" [nzOverflowCount]="10">
+        <span class="icon" nz-icon nzType="heart" nzTheme="outline"></span>
+      </nz-badge>
+      <nz-badge [nzCount]="PData"  [nzOverflowCount]="10">
+        <span class="icon" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+      </nz-badge>
+      <button nz-button nz-dropdown class="user" [nzDropdownMenu]="menuuser" nzPlacement="bottomRight">
+        <span class="icon" nz-icon nzType="user" nzTheme="outline"></span>
+      </button>
+      <nz-dropdown-menu #menuuser="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>
+            <span class="icon-dropdown" nz-icon nzType="user" nzTheme="outline"></span>
+            Manage My Account
+          </li>
+          <li nz-menu-item>
+            <span class="icon-dropdown" nz-icon nzType="shopping" nzTheme="outline"></span>
+            My Order
+          </li>
+          <li nz-menu-item>
+            <span class="icon-dropdown" nz-icon nzType="close-circle" nzTheme="outline"></span>
+            My Cancellations
+          </li>
+          <li nz-menu-item>
+            <span class="icon-dropdown" nz-icon nzType="star" nzTheme="outline"></span>
+            My Reviews
+          </li>
+          <li nz-menu-item>
+            <span class="icon-dropdown" nz-icon nzType="logout" nzTheme="outline"></span>
+            Logout
+          </li>
+      
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+  </div>
 </nav>
