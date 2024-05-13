@@ -74,6 +74,8 @@ export class HomeComponent {
       image: "../../../assets/images/flash/4.png"
     },
   ]
+
+  shop:any = []
   constructor(
     private service: ServicesService
   ) {
@@ -89,8 +91,8 @@ export class HomeComponent {
     this.isVisibleMiddle = false;
   }
 
-  showModalMiddle(): void {
-    this.isVisibleMiddle = !this.isVisibleMiddle;
+  showModalMiddle(data:any): void {
+    this.shop.push(data)
   }
 
   

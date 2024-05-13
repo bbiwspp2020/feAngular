@@ -1,3 +1,4 @@
+<app-top-bar [data]="shop"></app-top-bar>
 <div class="container">
   <div class="row">
     <div class="col-3 p-0">
@@ -84,7 +85,7 @@
         <img alt="example" src="{{i.image}}" />
       </ng-template>
       <ng-template #actionSetting>
-        <button nz-button nzType="primary" (click)="showModalMiddle()">Vertically centered modal dialog</button>
+        <button nz-button nzType="primary" (click)="showModalMiddle(i)">Add</button>
       </ng-template>
 
     </div>

@@ -45,10 +45,10 @@
       </ng-template>
     </div>
     <div class="col-2 d-flex align-items-center  justify-content-around">
-      <nz-badge [nzCount]="200" [nzOverflowCount]="10">
+      <nz-badge [nzCount]="2" [nzOverflowCount]="10">
         <span class="icon" nz-icon nzType="heart" nzTheme="outline"></span>
       </nz-badge>
-      <nz-badge [nzCount]="PData"  [nzOverflowCount]="10">
+      <nz-badge [nzCount]="data.length == 0 ? 0 : data.length"  [nzOverflowCount]="10">
         <span class="icon" nz-icon nzType="shopping-cart" nzTheme="outline"></span>
       </nz-badge>
       <button nz-button nz-dropdown class="user" [nzDropdownMenu]="menuuser" nzPlacement="bottomRight">

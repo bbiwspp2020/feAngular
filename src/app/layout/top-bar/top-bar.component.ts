@@ -6,14 +6,10 @@ import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
-  @Input() PData: number | undefined;
-  @Output() childEvent = new EventEmitter();
+  @Input() data: any
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onChange(value:any) {
-    this.childEvent.emit(value);
+    console.log(this.data);
   }
 }
