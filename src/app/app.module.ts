@@ -33,7 +33,7 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AntDesignModule
+    AntDesignModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

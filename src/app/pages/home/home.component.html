@@ -71,12 +71,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 mb-4 mt-4" *ngFor="let i of flash;index of index">
-      <nz-card nzHoverable style="width:250px;" [nzCover]="coverTemplate" [nzActions]="[actionSetting]">
+    <div class="col-md-3 mb-4 mt-4" *ngFor="let i of flash;let index = index">
+      <nz-card nzHoverable style="width:250px;" [nzCover]="coverTemplate">
         <nz-card-meta nzTitle="{{i.title}}" nzDescription="{{'$' + i.pricr}}{{'$' + i.oriPrice}}"
           [nzAvatar]="avatarTemplate">
         </nz-card-meta>
         <nz-rate [ngModel]="i.rate" nzAllowHalf></nz-rate> ({{i.form}})
+        <button nz-button nzType="primary" (click)="loadOne(i)" [nzLoading]="isLoadingOne">Add{{index}}</button>
       </nz-card>
       <ng-template #avatarTemplate>
         <nz-avatar nzSrc="{{i.image}}"></nz-avatar>
@@ -84,10 +85,6 @@
       <ng-template #coverTemplate>
         <img alt="example" src="{{i.image}}" />
       </ng-template>
-      <ng-template #actionSetting>
-        <button nz-button nzType="primary" (click)="showModalMiddle(i)">Add</button>
-      </ng-template>
-
     </div>
   </div>
   <div class="row">

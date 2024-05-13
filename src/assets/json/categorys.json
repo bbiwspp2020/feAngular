@@ -1,0 +1,28 @@
+{
+    "responde": [
+        {
+            "name": "Phones",
+            "image": "../../../assets/Categorys/Category-Camera.png"
+        },
+        {
+            "name": "CellPhone",
+            "image": "../../../assets/Categorys/Category-CellPhone.png"
+        },
+        {
+            "name": "Computer",
+            "image": "../../../assets/Categorys/Category-Computer.png"
+        },
+        {
+            "name": "Gamepad",
+            "image": "../../../assets/Categorys/Category-Gamepad.png"
+        },
+        {
+            "name": "Headphone",
+            "image": "../../../assets/Categorys/Category-Headphone.png"
+        },
+        {
+            "name": "SmartWatch",
+            "image": "../../../assets/Categorys/Category-SmartWatch.png"
+        }
+    ]
+}
